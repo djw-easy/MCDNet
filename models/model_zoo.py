@@ -1,13 +1,10 @@
 import torch
 from models.sseg.unet import UNet
 from models.sseg.cloudnet import CloudNet
-from models.sseg.mffsnet import MFFSNet
 from models.sseg.deeplabv3_plus import DeepLabV3Plus
 from models.sseg.cdnetv2 import CDnetV2
 from models.sseg.segnet import SegNet
-from models.sseg.dcnet import DCNet
 from models.sseg.hrnet import HighResolutionNet
-from models.sseg.unet3plus import UNet3Plus
 from models.sseg.mscff import MSCFF
 from models.sseg.mfcnn import MFCNN
 from models.sseg.mcdnet import MCDNet
@@ -20,20 +17,14 @@ def get_model(args, device):
         model = UNet(in_channels=in_channels, out_channels=out_channels)
     elif model_name == "cloudnet":
         model = CloudNet(in_channels=in_channels, out_channels=out_channels)
-    elif model_name == "mffsnet":
-        model = MFFSNet(in_channels=in_channels, out_channels=out_channels)
     elif model_name == "deeplabv3plus":
         model = DeepLabV3Plus(in_channels=in_channels, out_channels=out_channels)
     elif model_name == "segnet":
         model = SegNet(in_channels=in_channels, out_channels=out_channels)
     elif model_name == "cdnetv2":
         model = CDnetV2(in_channels=in_channels, out_channels=out_channels)
-    elif model_name == "dcnet":
-        model = DCNet(in_channels=in_channels, out_channels=out_channels)
     elif model_name == "hrnet":
         model = HighResolutionNet(in_channels=in_channels, out_channels=out_channels)
-    elif model_name == "unet3plus":
-        model = UNet3Plus(in_channels=in_channels, out_channels=out_channels)
     elif model_name == "mscff":
         model = MSCFF(in_channels=in_channels, out_channels=out_channels)
     elif model_name == "mfcnn":

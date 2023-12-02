@@ -5,7 +5,7 @@ import argparse
 
 class Options:
     def __init__(self, model_name: str):
-        models = ["unet", "cloudnet", "mffsnet", "deeplabv3plus", "cdnetv2", "segnet", "dcnet", "hrnet", "unet3plus", "mscff", "mfcnn", "mcdnet"]
+        models = ["unet", "cloudnet", "deeplabv3plus", "cdnetv2", "segnet", "hrnet", "mscff", "mfcnn", "mcdnet"]
         assert model_name in models
         parser = argparse.ArgumentParser('DJW -- Cloud Detection')
         # params of data storage
