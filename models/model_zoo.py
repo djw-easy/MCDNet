@@ -7,6 +7,7 @@ from models.sseg.segnet import SegNet
 from models.sseg.hrnet import HighResolutionNet
 from models.sseg.mscff import MSCFF
 from models.sseg.mfcnn import MFCNN
+from models.sseg.vision_transformer import SwinUnet
 from models.sseg.mcdnet import MCDNet
 
 
@@ -29,6 +30,8 @@ def get_model(args, device):
         model = MSCFF(in_channels=in_channels, out_channels=out_channels)
     elif model_name == "mfcnn":
         model = MFCNN(in_channels=in_channels, out_channels=out_channels)
+    elif model_name == "swinunet":
+        model = SwinUnet(in_channels=in_channels, out_channels=out_channels)
     elif model_name == "mcdnet":
         model = MCDNet(in_channels=in_channels, out_channels=out_channels)
     else:
