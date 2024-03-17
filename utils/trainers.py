@@ -63,18 +63,6 @@ class BaseTrainer(object):
                                              momentum=0.9, weight_decay=0.0005)
             lr_decay_function = lambda epoch: (1 - epoch / self.args.n_epochs) ** 0.9
             self.lr_scheduler = torch.optim.lr_scheduler.LambdaLR(self.optimizer, lr_lambda=lr_decay_function)
-        elif self.model_name in ['cloudnet', 'unet', 'deeplabv3plus', 'segnet']:
-            self.optimizer = torch.optim.Adam(self.model.parameters(), lr=0.0001, betas=(0.9, 0.999))
-            lr_decay_function = lambda epoch: (1 - epoch / self.args.n_epochs) ** 0.9
-            self.lr_scheduler = lr_scheduler.LambdaLR(self.optimizer, lr_lambda=lr_decay_function)
-        elif self.model_name == 'mffsnet':
-            self.optimizer = torch.optim.SGD(self.model.parameters(), lr=0.0001, momentum=0.9, weight_decay=0.0001)
-            lr_decay_function = lambda epoch: (1 - epoch / self.args.n_epochs) ** 0.9
-            self.lr_scheduler = torch.optim.lr_scheduler.LambdaLR(self.optimizer, lr_lambda=lr_decay_function)
-        elif self.model_name == 'dcnet':
-            self.optimizer = torch.optim.SGD(self.model.parameters(), lr=0.0001, momentum=0.9, weight_decay=1e-6)
-            lr_decay_function = lambda epoch: (1 - epoch / self.args.n_epochs) ** 0.9
-            self.lr_scheduler = torch.optim.lr_scheduler.LambdaLR(self.optimizer, lr_lambda=lr_decay_function)
         else:
             self.optimizer = torch.optim.Adam(self.model.parameters(), lr=self.args.lr, betas=(self.args.b1, self.args.b2))
             lr_decay_function = lambda epoch: (1 - epoch / self.args.n_epochs) ** 0.9
