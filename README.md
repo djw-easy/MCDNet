@@ -45,3 +45,21 @@ Generally, the model will be saved in the `./data/saved_models/{model-name}` dir
 
 Or you can use `test.py` to evaluate the model's accuracy. 
 
+# Citation
+
+If you use this code for your research, please cite our papers.
+
+~~~
+@article{MCDNet,
+title = {MCDNet: Multilevel cloud detection network for remote sensing images based on dual-perspective change-guided and multi-scale feature fusion},
+journal = {International Journal of Applied Earth Observation and Geoinformation},
+volume = {129},
+pages = {103820},
+year = {2024},
+issn = {1569-8432},
+doi = {10.1016/j.jag.2024.103820}
+}
+~~~
+
+
+
