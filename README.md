@@ -31,6 +31,8 @@ l8
         bccr
 ```
 
+Additionally, please note that during training, the label values are assigned as follows: cloudless and no-data areas are labeled as 0, thin clouds are labeled as 1, and thick clouds are labeled as 2.
+
 # Train
 
 You should change the config in the `./utils/config.py`, then input the model name you want to use in the `train.py`, and finally run the model by: 
